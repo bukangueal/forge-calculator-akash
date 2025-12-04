@@ -3,34 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Forge Calculator</title>
+    <title>The Forge Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<h1>Forge Calculator</h1>
+<h1 class="title">THE FORGE CALCULATOR</h1>
 
 <div class="container">
 
-    <label>Category:</label>
-    <select id="category" onchange="updateItems()">
-        <option value="weapon">Weapon</option>
-        <option value="armor">Armor</option>
-    </select>
+    <div class="section">
+        <label>Select Category</label>
+        <select id="category" onchange="updateItems()">
+            <option value="weapon">Weapon</option>
+            <option value="armor">Armor</option>
+        </select>
 
-    <label>Item:</label>
-    <select id="item"></select>
+        <label>Select Item</label>
+        <select id="item" onchange="updateForgeInfo()"></select>
 
-    <label>Total Ore Needed:</label>
-    <input type="number" id="totalOre" readonly>
+        <div id="forgeInfo" class="forge-info"></div>
+    </div>
 
-    <h2>Ore Input</h2>
-    <div id="oreInputs"></div>
+    <div class="section">
+        <h2>Click Ores to Add</h2>
+        <div id="oreButtons" class="ore-grid"></div>
+    </div>
 
-    <button onclick="computeForge()">Compute Forge</button>
+    <div class="section">
+        <h2>Selected Ores</h2>
+        <div id="selectedOres"></div>
+    </div>
 
-    <h2>Result</h2>
-    <div id="result"></div>
+    <div class="section result-box">
+        <h2>Forge Summary</h2>
+        <p id="forgeResult"></p>
+    </div>
 
 </div>
 
